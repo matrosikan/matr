@@ -1,0 +1,79 @@
+Код на Python:
+def sum_digits(n):
+    """
+    Рекурсивно вычисляет сумму цифр числа
+    
+    Args:
+        n (int): целое неотрицательное число
+    
+    Returns:
+        int: сумма цифр числа
+    """
+    if n < 10:
+        return n
+    else:
+        return n % 10 + sum_digits(n // 10)
+
+# Тестирование функции
+def main():
+    test_numbers = [123, 9876, 0, 7, 1001, 9999]
+    
+    print("Сумма цифр чисел:")
+    for num in test_numbers:
+        result = sum_digits(num)
+        print(f"sum_digits({num}) = {result}")
+
+if __name__ == "__main__":
+    main()
+
+Код на С++:
+#include <iostream>
+using namespace std;
+
+/**
+ * Рекурсивно вычисляет сумму цифр числа
+ * 
+ * @param n целое неотрицательное число
+ * @return сумма цифр числа
+ */
+int sumDigits(int n) {
+    if (n < 10) {
+        return n;
+    } else {
+        return n % 10 + sumDigits(n / 10);
+    }
+}
+
+int main() {
+    int testNumbers[] = {123, 9876, 0, 7, 1001, 9999};
+    int size = sizeof(testNumbers) / sizeof(testNumbers[0]);
+    
+    cout << "Сумма цифр чисел:" << endl;
+    for (int i = 0; i < size; i++) {
+        int result = sumDigits(testNumbers[i]);
+        cout << "sumDigits(" << testNumbers[i] << ") = " << result << endl;
+    }
+    
+    return 0;
+}
+
+Код на java:
+public class Main {
+    
+    public static int sumDigits(int n) {
+        if (n < 10) {
+            return n;
+        } else {
+            return n % 10 + sumDigits(n / 10);
+        }
+    }
+    
+    public static void main(String[] args) {
+        System.out.println("Сумма цифр чисел:");
+        System.out.println("123 = " + sumDigits(123));
+        System.out.println("9876 = " + sumDigits(9876));
+        System.out.println("0 = " + sumDigits(0));
+        System.out.println("7 = " + sumDigits(7));
+        System.out.println("1001 = " + sumDigits(1001));
+    }
+}
